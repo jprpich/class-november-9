@@ -9,7 +9,7 @@ class BooksController < ApplicationController
   end
 
   def create
-    @author = Author.find(1)
+    @author = current_author
     #first way
     # @book = @author.books.build(book_params)
     # @book.save

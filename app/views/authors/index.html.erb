@@ -4,3 +4,13 @@
     <li><%= link_to author.name, author %></li>
   <% end %>
 </ul>
+
+<% if author_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_author_session_path, method: :delete) %>
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_author_session_path)  %>  
+  </li>
+<% end %>
